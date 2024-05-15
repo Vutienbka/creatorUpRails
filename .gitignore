@@ -29,7 +29,28 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
+/node_modules
+/yarn-error.log
+
 /public/assets
+.byebug_history
+
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+.env
+vendor/bundle/
+
+public/uploads/
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+config/database.yml
+.env
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

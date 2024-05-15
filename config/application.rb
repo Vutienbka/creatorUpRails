@@ -10,6 +10,13 @@ module CreatorUpRails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
+    # Remove unnessary routes
+    initializer(:remove_action_mailbox_and_activestorage_routes, after: :add_routing_paths) { |app|
+      app.routes_reloader.paths.delete_if { |path| path =~ /activestorage/ }
+      app.routes_reloader.paths.delete_if { |path| path =~ /actionmailbox/ }
+      app.routes_reloader.paths.delete_if { |path| path =~ /actionmailer/ }
+      #app.remove_reloader.paths_delete_if {|path| path =~ /turborecedehistoricallocation/ }
+    }
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
