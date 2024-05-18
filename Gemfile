@@ -68,3 +68,8 @@ group :test do
 end
 
 gem "devise"
+gem "sass-rails"
+gem "bootstrap"
+gem "jquery-rails"
+
+gem "cssbundling-rails", "~> 1.4"
