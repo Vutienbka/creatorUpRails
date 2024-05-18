@@ -7,9 +7,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= yield :head %>
   </head>
 
   <body>
+  <div class="container-fluid">
+  <%= yield :navbar %>
     <%= yield %>
+  </div>
   </body>
 </html>
