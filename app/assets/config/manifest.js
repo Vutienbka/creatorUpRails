@@ -3,5 +3,6 @@
 //= link_tree ../javascript .js
 //= link_tree ../../../vendor/javascript .js
 //= link_tree ../static_pages
+//= link_tree ../stylesheets
 
 //=link application.css
