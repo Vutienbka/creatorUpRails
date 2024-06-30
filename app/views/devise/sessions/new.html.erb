@@ -1,26 +1,93 @@
-<h2>Log in</h2>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <!-- Bootstrap CSS -->
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <%= stylesheet_link_tag "devise/css/bootstrap/bootstrap-grid" %>
+    <%= stylesheet_link_tag "devise/css/bootstrap/bootstrap-reboot" %>
+    <%= stylesheet_link_tag "devise/css/owl.carousel.min" %>
+    <%= stylesheet_link_tag "devise/css/bootstrap.min" %>
+    <%= stylesheet_link_tag "devise/fonts/icomoon/style" %>
+    <%= stylesheet_link_tag "devise/fonts/icomoon/demo-files/demo" %>
+    <!-- Style -->
+    <%= stylesheet_link_tag "devise/css/style" %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <title>Login #9</title>
+  </head>
+  <body>
+  
+  <div class="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- <div class="col-md-6 order-md-2">
+          <img src="images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+        </div> -->
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <div class="mb-4">
+                  <h3>Log In to <strong>Rails</strong></h3>
+                </div>
+                <form class='user_signin' id='user_signin' action="/users/sign_in" method="post" accept-charset='UTF-8'>
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token, id: :form_token %>
+                  <div class="form-group email">
+                    <label for="user_email">Email</label>
+                    <input type="email" value class="form-control" id="user_email" name='user[email]' autoforcus='autoforcus' autocomplete='email'>
+                    
+                  </div>
+                  <div class="form-group last mb-4 password">
+                    <label for="user_password">Password</label>
+                    <input type="password" class="form-control" id="user_password" name='user[password]' autocomplete='current-password'>
+                  </div>
+                  
+                  <div class="d-flex mb-5 align-items-center">
+                    <label class="control control--checkbox mb-0" for='user_remember_me'><span class="caption">Remember me</span>
+                      <input type="hidden" value='0' name='user[remember_me]' autocomplete='off' />
+                      <input type="checkbox" value='1' name='user[remember_me]' id='user_remember_me' />
+                      <div class="control__indicator"></div>
+                    </label>
+                    <span class="ml-auto"><a href="/users/password/new" class="forgot-pass">Forgot Password</a></span>      
+                  </div>
+                  <div class="actions">
+                     <input type="button" name='commit' value="Log in" class="btn btn-pill text-white btn-block btn-primary" data-disable-with="Log in">
+                  </div>
+                  <span class="d-block text-center my-4 text-muted"> or sign in with</span>
+                  
+                  <div class="social-login text-center">
+                    <a href="#" class="facebook">
+                      <span class="icon-facebook mr-3"></span> 
+                    </a>
+                    <a href="#" class="twitter">
+                      <span class="icon-twitter mr-3"></span> 
+                    </a>
+                    <a href="#" class="google">
+                      <span class="icon-google mr-3"></span> 
+                    </a>
+                  </div>  
+                </form>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+  
+  <%= javascript_include_tag "devise/jquery-3.3.1.min" %>
+  <%= javascript_include_tag "devise/popper.min" %>
+  <%= javascript_include_tag "devise/bootstrap.min" %>
+  <%= javascript_include_tag "devise/main" %>
+  <%= javascript_include_tag "devise/validation" %>
 
-<%= render "devise/shared/links" %>
+  </body>
+</html>
+  
+
+

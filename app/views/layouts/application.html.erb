@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>CreatorUpRails</title>
@@ -9,14 +8,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
     <%= yield :head %>
+
   </head>
 
-  <body>
-  <div class="container-fluid">
-  <%= yield :navbar %>
-    <%= yield %>
-  </div>
+  <body id="page-top">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+    <%= yield :navbar %>
+    <%= yield %>  
   </body>
 </html>

@@ -71,5 +71,11 @@ gem "devise"
 gem "sass-rails"
 gem "bootstrap"
 gem "jquery-rails"
+gem "jquery-validation-rails"
+gem "exception_notification"
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem "pry", "~> 0.14.2"
+
+gem "pry-rails", "~> 0.3.9"

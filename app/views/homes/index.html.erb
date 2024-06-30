@@ -1,52 +1,50 @@
 <% content_for :head do %>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Agency - Start Bootstrap Theme</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <%= stylesheet_link_tag "css/styles.css" %>
-
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <%= stylesheet_link_tag "css/styles.css" %>
 <% end %>
 <% content_for :navbar do %>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">   
-        <% if user_signed_in? %>
-            <li class="navbar-brand"><a class="nav-link" href="#services"><%= current_user.email %></a></li>
-        <% else %>
-            <li class="navbar-brand"><a class="nav-link" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a></li>
-        <% end %>
-    </ul>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars ms-1"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <div class="container">
             <% if user_signed_in? %>
-              <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, class: "nav-link" %></li>
+              <%= link_to current_user&.email, class: "navbar-brand" %>
             <% else %>
-              <li class="nav-item"><%= link_to "Sign in", user_session_path, class: "nav-link" %></li>
+              <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
             <% end %>
-        </ul>
-    </div>
-    </div>
-   </nav>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <% if user_signed_in? %>
+                    <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, class: "nav-link", method: :delete %> </li>
+                    <% else %>
+                    <li class="nav-item"><%= link_to "Sign In", user_session_path, class: "nav-link" %> </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </nav>
 <% end %>
-        <!-- Masthead-->
+<div class="container-fluid">
+<!-- Masthead-->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To Our Studio!</div>
@@ -607,3 +605,14 @@
                 </div>
             </div>
         </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <scrip src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <%= javascript_include_tag "js/scripts" %>
+
+</div>

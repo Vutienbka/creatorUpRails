@@ -1,29 +1,66 @@
-<h2>Sign up</h2>
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<html>
+<head>
+<title>Creative Colorlib SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<%= stylesheet_link_tag "devise/css/signup" %>
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form class="user_signup" id="user_signup" action="/users" accept-charset="UTF-8" method="post">
+				    <%= hidden_field_tag :authenticity_token, form_authenticity_token, id: :form_token %>
+					<div class="email">
+					  <input class="email" autofocus="autofocus" autocomplete="email" type="email" value name="user[email]" id="user_email" placeholder="Email" required="">
+					</div>
+					<div class="w3lpass password">
+					   <input autocomplete="new-password" type="password" name="user[password]" id="new_password" placeholder="Password" required="">
+				    </div>
+					<div class="w3lpass password_confirmation">
+					    <input autocomplete="new-password" type="password" name="user[password_confirmation]" id="new_password_confirmation" placeholder="Confirm Password" required="">
+					</div>
+					<div class="wthree-text remember_me">
+						<label class="anim">
+							<input type="checkbox" name='remember_me' class="checkbox" required="required">
+							<span class='term_condition'>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<div class="actions">
+					   <input name="commit" value="Sign up" type="button">
+					</div>
+				</form>
+				<p>Don't have an Account? <a href="/users/sign_in"> Login Now!</a></p>
+			</div>
+		</div>
+		<%= javascript_include_tag "devise/validation" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>
