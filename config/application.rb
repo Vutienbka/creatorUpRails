@@ -12,12 +12,12 @@ module CreatorUpRails
     config.load_defaults 7.1
     # Remove unnessary routes
     initializer(:remove_action_mailbox_and_activestorage_routes, after: :add_routing_paths) { |app|
-      app.routes_reloader.paths.delete_if { |path| path =~ /activestorage/ }
+      #app.routes_reloader.paths.delete_if { |path| path =~ /activestorage/ }
       app.routes_reloader.paths.delete_if { |path| path =~ /actionmailbox/ }
       app.routes_reloader.paths.delete_if { |path| path =~ /actionmailer/ }
       #app.remove_reloader.paths_delete_if {|path| path =~ /turborecedehistoricallocation/ }
     }
-
+    config.active_storage.replace_on_assign_to_many = false
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
