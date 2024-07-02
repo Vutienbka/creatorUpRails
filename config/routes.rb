@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  direct :rails_direct_uploads do
+    route_for(:rails_direct_uploads)
+  end
+
+  resources :elements
   root :to => "homes/homes#index", controller: "HomesController"
   devise_for :users
 
